@@ -11,36 +11,33 @@ public class PageController {
 	@RequestMapping(value= {"/","/home","/index"})
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting","Welcome to Spring MVC!");
+		mv.addObject("title","Home");
+		mv.addObject("userClickHome",true);
 		return mv;
 	}
-	//RequesParam kullanýlmasý
-	@RequestMapping(value="/test")
-	public ModelAndView test(@RequestParam("greeting")String greeting) {
-		
+	//about
+	@RequestMapping(value = "/about")
+	public ModelAndView about() {
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting",greeting);
+		mv.addObject("title","About Us");
+		mv.addObject("userClickAbout",true);
 		return mv;
 	}
-	//Parametre verilmediðinde hatanýn giderilmesi
-	@RequestMapping(value="/test2")
-	public ModelAndView test2(@RequestParam(value="greeting",required=false)String greeting) {
-		if(greeting==null) {
-			greeting="Hello there";
-		}
+	//listProducts
+	@RequestMapping(value = "/listProducts")
+	public ModelAndView products() {
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting",greeting);
-		return mv;		
+		mv.addObject("title","Products");
+		mv.addObject("userClickProducts",true);
+		return mv;
 	}
-	//PathVarible kullanýlmasý
-	@RequestMapping(value="/test3/{greeting}")
-	public ModelAndView test3(@PathVariable("greeting")String greeting) {
-		if(greeting==null) {
-			greeting="Hello there";
-		}
+	//contact
+	@RequestMapping(value = "/contact")
+	public ModelAndView contact() {
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting",greeting);
-		return mv;		
+		mv.addObject("title","Contact Us");
+		mv.addObject("userClickContact",true);
+		return mv;
 	}
 }
 
