@@ -1,4 +1,3 @@
-<h2 class="my-4">Shop Category</h2>
 
 <div class="list-group">
 	<c:forEach items="${categories}" var="category">

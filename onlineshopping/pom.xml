@@ -54,7 +54,21 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>5.2.7.Final</version>
 		</dependency>
+		<!-- Spring Core - Exclusion Common-Logging-->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
 	</dependencies>
+
 	<build>
 		<plugins>
 			<!-- Update to latest Java Version -->

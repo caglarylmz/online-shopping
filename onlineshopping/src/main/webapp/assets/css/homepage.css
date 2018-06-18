@@ -2,8 +2,8 @@ html{
 	height: 100%;
 }
 body {
-  padding-top: 54px;
-  height: 100%;
+	padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    height:100%;
 }
 
 @media (min-width: 992px) {
@@ -12,22 +12,27 @@ body {
   }
 }
 
+footer {
+	
+    margin: 20px;
+
+}
 /*Custom Styling*/
 /*page.jsp'de <div class="wrapper">*/
 .wrapper{
 	min-height: 100%;
-	position: relative;
+	position: relative;	
+	
 }
 /*page.jsp'de <div class="content">*/
 .content{
-	padding-bottom: 65px /*height of the footer*/
+	padding-bottom: 60px; /*height of the footer*/
 }
 /*footer.jsp'de <div class="container footer">*/
 .footer{
 	position: absolute;
-	left : 10%;
-	bottom: 15px;
-	height: 65px;
+	bottom: 10px;
+	height: 50px;
 	width:100%;	
 }
 .ol.breadcrumb{
@@ -41,7 +46,6 @@ ul.breadcrumb li {
     display: inline;
     font-size: 18px;
 }
-
 /* Add a slash symbol (/) before/behind each list item */
 ol.breadcrumb li+li:before {
     padding: 8px;
@@ -59,4 +63,13 @@ ol.breadcrumb li a {
 ol.breadcrumb li a:hover {
     color: #01447e;
     text-decoration: underline;
+}
+
+.dataTableImg{
+	width:96px;
+	height:76px;
+}
+.list-group{
+	position:inherit;
+	padding-top: 20px;
 }
