@@ -78,7 +78,7 @@
 		<script src="${js}/bootstrap.js"></script>
 		<!--DataTable Plugin  -->
 		<script src="${js}/jquery.dataTables.js"></script>	
-		<script src="${js}/dataTables.bootstrap.js"></script>	
+		<script src="${js}/dataTables.bootstrap4.js"></script>	
 		<!--load myapp.js  -->
 		<script src="${js}/myapp.js"></script>
 
