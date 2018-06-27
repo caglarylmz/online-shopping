@@ -34,7 +34,7 @@
 <!-- Theme CSS -->
 <link href="${css}/bootstrap-darkly.css" rel="stylesheet">
 <!-- jquery DataTable jquery css -->
-<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
+<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet">
 <link href="${css}/jquery.dataTables.css" rel="stylesheet">
 <!-- Custom styles for this template -->
 <link href="${css}/homepage.css" rel="stylesheet">
@@ -63,12 +63,14 @@
 			<c:if test="${userClickAllProducts == true or userClickCategoryProducts==true}">
 				<%@include file="./listProducts.jsp"%>
 			</c:if>
-
 			<!-- Load only when user clicks show product -->
 			<c:if test="${userClickShowProduct == true}">
 				<%@include file="./singleProduct.jsp"%>
 			</c:if>
-			
+			<!-- Load only user clicks Manage Products -->
+			<c:if test="${userClickManageProduct == true}">
+				<%@include file="./manageProducts.jsp"%>
+			</c:if>
 		</div>
 		<!-- Footer -->
 		<%@include file="./shared/footer.jsp"%>

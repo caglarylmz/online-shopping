@@ -1,10 +1,14 @@
 $(function() {
+	//active element
 	switch (menu) {
 	case 'About Us':
 		$('#about').addClass('active');
 		break;
 	case 'Contact Us':
 		$('#contact').addClass('active');
+		break;
+	case 'Manage Products':
+		$('#manageProducts').addClass('active');
 		break;
 	case 'All Products':
 		$('#listProducts').addClass('active');
@@ -94,5 +98,13 @@ $(function() {
 			]
 		});
 	}
+	//dismiising the alert after 3 seconds
+	var $alert = $('.alert');
+	if($alert.length){
+		setTimeout(function(){
+			$alert.fadeOut('slow');
+			}, 3000);
+	}
+		
 	
 });
