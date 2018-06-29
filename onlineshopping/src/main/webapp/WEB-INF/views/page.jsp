@@ -83,6 +83,8 @@
 		<script src="${js}/dataTables.bootstrap4.js"></script>	
 		<!--load myapp.js  -->
 		<script src="${js}/myapp.js"></script>
+		<!--load bootbox.js  -->
+		<script src="${js}/bootbox.min.js"></script>
 
 	</div>
 </body>

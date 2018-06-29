@@ -110,7 +110,12 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>5.4.1.Final</version>
 		</dependency>
-
+		<!-- Spring Web For MultipartFile -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

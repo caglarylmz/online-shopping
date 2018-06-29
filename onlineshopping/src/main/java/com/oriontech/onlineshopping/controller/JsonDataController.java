@@ -24,6 +24,14 @@ public class JsonDataController {
 	public List<Product> getAllProducts(){
 		return productDAO.listActiveProducts();
 	}
+	
+	/*/admin/all/products yolu sadece data göndereceðinden ModelAndView yerine @ResponseBody kullanýyoruz.*/
+	@RequestMapping("/admin/all/products")
+	@ResponseBody
+	public List<Product> getAllProductsForAdmin(){
+		return productDAO.list();
+	}
+	
 	//Categori id'ye göre data döner
 	@RequestMapping("/category/{id}/products")
 	@ResponseBody
