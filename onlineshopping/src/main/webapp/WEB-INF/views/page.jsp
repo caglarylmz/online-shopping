@@ -85,6 +85,8 @@
 		<script src="${js}/myapp.js"></script>
 		<!--load bootbox.js  -->
 		<script src="${js}/bootbox.min.js"></script>
+		<!-- jQuery  validator -->
+		<script src="${js}/jquery.validate.js"></script>
 
 	</div>
 </body>

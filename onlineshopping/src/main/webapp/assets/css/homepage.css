@@ -134,3 +134,10 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+#myCategoryModal{
+position:fixed-top;
+}
+.modal-header{
+	position:inherit;
+	margin-top: 60px;
+}

@@ -77,22 +77,31 @@
 								<sf:select class="form-control" id="categoryId" path="categoryId"
 								items="${categories}"
 								itemLabel="name"
-								itemValue="id"/>																		
+								itemValue="id"/>
+								<!-- add category button-->	
+								<c:if test="${product.id==0}"> <!-- eğer var olan bir product editleniyorsa bu buton görünmesin -->
+									<div class="text-right">
+										<br/>
+										<button type="button" data-toggle="modal" data-target="#myCategoryModal" class="btn btn-warning btn-xs">Add Category</button>								
+									</div>
+								</c:if>																	
 							</div>
 						</div>
 
-						<!-- Button -->						
-						<div class="form-group row" >						
-							<div class="col-md-8" >
-								<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-primary"/>
-								<!-- Hidden Fields for Prododucts-->
-								<sf:hidden path="id"/>
-								<sf:hidden path="code"/>
-								<sf:hidden path="supplierId"/>
-								<sf:hidden path="active"/>
-								<sf:hidden path="views"/>
-							</div>
-						</div>						
+						<!-- Button -->				
+						<div class="text-left">		
+							<div class="form-group row" >						
+								<div class="col-md-8" >
+									<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-primary"/>
+									<!-- Hidden Fields for Prododucts-->
+									<sf:hidden path="id"/>
+									<sf:hidden path="code"/>
+									<sf:hidden path="supplierId"/>
+									<sf:hidden path="active"/>
+									<sf:hidden path="views"/>
+								</div>
+							</div>	
+						</div>					
 					</sf:form>			
 				</div>
 			</div>
@@ -135,5 +144,43 @@
 				</table>
 			</div>			
 		</div>		
+	</div>
+	
+	<div class="modal fade" id="myCategoryModal" role="dialog" tabindex="-1">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">	
+					<h4 class="modal-title"><label class="control-label col-md-16">Add New Category</label></h4>			
+					<button type="button" class="close" data-dismiss="modal">
+						<span>&times;</span>
+					</button>					
+				</div>				
+				<div class="modal-body">				
+					<!-- Category Form with Spring Form / Categorey.java property'lerine göre adlandırılır.-->
+					<sf:form id="categoryForm" modelAttribute="category" action="${contextRoot}/manage/category" method="POST" class="form-horizontal">
+						<!-- category Name -->
+						<div class="form-group">
+							<label for="category_name" class="control-label col-md-4">Category Name</label>
+							<div class="col-md-8">
+								<sf:input type="text" path="name" id="category_name" class="form-control"/>
+							</div>
+						</div>
+						<!-- category dexcription -->
+						<div class="form-group">
+							<label for="category_description" class="control-label col-md-4">Description</label>
+							<div class="col-md-8">
+								<sf:textarea cols="" rows="5" path="description" id="category_description" class="form-control"/>
+							</div>
+						</div>
+						<!-- category submit -->
+						<div class="form-group">
+							<div class="col-md-offset-4 col-md-8">
+								<input type="submit" value="Add Category" class="btn btn-primary"/>
+							</div>
+						</div>
+					</sf:form>							
+				</div>					
+			</div>
+		</div>
 	</div>
 </div>
